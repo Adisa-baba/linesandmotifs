@@ -517,62 +517,6 @@ footer {
     }
 }
 
-/* Base styles for all devices (mobile-first approach is recommended) */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
-}
 
-/* --- Mobile Devices (e.g., up to 767px wide) --- */
-/* These styles apply by default in a mobile-first approach.
-   You might only need to explicitly define things here if you are
-   overriding desktop styles or want to ensure certain mobile-specific behaviors. */
-
-/* Small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    /* Styles for extra small screens and phones */
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
-    nav ul li {
-        display: block; /* Stack navigation items vertically */
-        text-align: center;
-    }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    /* Styles for tablets and larger phones in landscape */
-    .container {
-        width: 90%;
-        margin: 0 auto;
-    }
-    nav ul li {
-        display: inline-block; /* Display navigation items horizontally */
-    }
-}
-
-/* --- Laptops and Desktops (e.g., 992px and up, or 1200px and up) --- */
-
-/* Large devices (desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    /* Styles for standard desktop screens */
-    .container {
-        width: 80%;
-        max-width: 1200px; /* Optional: set a maximum width for very large screens */
-    }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    /* Styles for larger desktop screens */
-    .container {
-        width: 70%;
-        max-width: 1400px;
-    }
-}
 
 
