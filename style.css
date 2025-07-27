@@ -1,0 +1,578 @@
+/* Basic Reset & Body Styles (KEEP AS IS) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #211A10;
+}
+
+.section-padding {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Header & Navigation (KEEP AS IS) */
+header {
+    background: #A68B6B;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav ul li a {
+    border: 2px black;
+    border-radius: 10px;
+    border-style: none;
+    padding: 10px;
+    margin: 20px;
+    background-color: #040731; /* Background color for nav links */
+
+}
+
+nav ul li a:hover {
+    color: #007bff; /* Highlight color */
+}
+
+/* Social Links - NEW STYLES */
+.social-links {
+    display: flex;
+    gap: 15px; /* Space between icons */
+    margin-left: 20px; /* Space from navigation links */
+}
+
+.social-links img {
+    height: 24px; /* Size of your social icons */
+    width: 24px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: translateY(-3px); /* Subtle hover effect */
+}
+
+
+/* Responsive Design (adjust for new social links) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center; /* Center items when stacked */
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    .social-links {
+        margin-top: 15px; /* Add space above social links when stacked */
+        margin-left: 0; /* Remove left margin when stacked */
+        justify-content: center; /* Center social icons on small screens */
+    }
+
+    /* ... rest of your existing media query styles ... */
+}
+
+/* Update for logo image */
+nav .logo img {
+    height: 100px; /* Adjust as needed - this sets the height of your logo */
+    width: auto; /* Maintains aspect ratio */
+    vertical-align: middle; /* Aligns with nav items */
+}
+
+/* Remove or modify if you previously had text-based logo styling */
+nav .logo h1 { /* You can remove this rule if your logo is always an image */
+    color: #fff;
+    margin: 0;
+}
+
+nav .logo h1 {
+    color: #7F7812;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #7F7812; /* Highlight color */
+}
+
+/* Hero Section (Specific to index.html) */
+.hero {
+/*    background: url('images/hero-bg.jpg') no-repeat center center/cover;  Make sure to create this image */
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    height: 60vh; /* Adjust height as needed */
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	animation: hero 15s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+@keyframes hero {
+	0% { background-image: url("images/slidesimages/carousel-44.jpg") }
+	33% { background-image: url("images/slidesimages/carousel-2.jpg")}
+	66% { background-image: url("images/slidesimages/carousel-3.jpg")}
+	100% { background-image: url("images/slidesimages/carousel-11.jpg")}
+}
+
+.hero::before { /* Overlay for better text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Page Hero (New for all other pages) */
+.page-hero {
+    background: #555; /* A darker background for page headers */
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.page-hero h2 {
+    font-size: 2.8em;
+    color: #fff;
+}
+
+.page-hero p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* Buttons */
+.button {
+    display: inline-block;
+    background: #040731; /* Button color */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: #0056b3;
+}
+
+.button.small-button { /* For featured projects on home page */
+    padding: 8px 15px;
+    font-size: 0.9em;
+    margin-top: 15px;
+}
+
+/* About Us Section (New for index.html) */
+.about-us {
+    background-color: papayawhip;
+  max-width: 900px;
+  margin: 0 auto; /* centers the content */
+  padding: 40px 20px;
+  line-height: 1.8;
+  font-family: 'Source Sans Pro', sans-serif; /* or your chosen font */
+  text-align: justify;
+  color: black;
+}
+
+.about-us h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: black;
+}
+
+/* Featured Items (New for index.html) */
+.featured-items {
+    background-color: #e9e9e9;
+}
+.featured-items .gallery-grid {
+    margin-top: 20px; /* Less space than main portfolio */
+}
+.featured-items .project-item {
+    padding: 15px;
+}
+.featured-items .project-item p {
+    font-size: 0.95em;
+}
+
+
+/* Services Section */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+#services-hero {
+    background: url("images/service1.jpg") no-repeat center center/cover; /* Background image for services page */
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+.service-item {
+    background: #A58A6A;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+	color: #000000;
+}
+
+.service-item h3 {
+    color: #040731;
+    margin-bottom: 15px;
+}
+
+/* Portfolio Section (Before & After) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+#hero-portfolio{
+    background: url("images/sittingroom-dinningafter.jpg") no-repeat center center/cover; /* Background image for services page */
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.project-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.project-item h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.image-pair {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.image-pair img {
+    max-width: 48%; /* Adjust to fit two images nicely side-by-side */
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    object-fit: cover; /* Ensures images cover the area without distortion */
+}
+
+.before-image {
+    filter: grayscale(80%); /* Optional: make before images less vibrant */
+}
+
+
+/* Contact Form */
+
+#hero-contact {
+    background: url("") no-repeat center center/cover; /* Background image for contact page */
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="subject"], /* Added subject field */
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    align-self: flex-start; /* Aligns button to the left */
+}
+
+.contact-info-section .contact-details {
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.contact-info-section .contact-details p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+
+/* Footer (KEEP AS IS) */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Design (KEEP AS IS, with minor adjustments for new elements) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .page-hero h2 {
+        font-size: 2em;
+    }
+
+    .image-pair {
+        flex-direction: column; /* Stack images on small screens */
+        align-items: center;
+    }
+
+    .image-pair img {
+        max-width: 90%; /* Make images take more width */
+    }
+
+    .contact-info-section .contact-details {
+        padding: 20px;
+    }
+}
+
+/* Team Section - NEW STYLES */
+.team-section {
+    background-color: #fcfcfc; /* Lighter background for this section */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member {
+    background: #A58A6A;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Make it square */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    margin-bottom: 20px;
+    border: 3px solid #007bff; /* Small border around the image */
+}
+
+.team-member h3 {
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.team-member .role {
+    color: #040731;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.team-member p {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.5;
+	margin-bottom: 15px;
+}
+
+.team-member .learn-more-link {
+    display: inline-block; /* Makes it behave like a block for padding, but in line with text flow */
+    color: #040731; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    padding: 8px 15px; /* Add some padding to make it clickable */
+    border: 1px solid #040731; /* Add a border */
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.team-member .learn-more-link:hover {
+    background-color: #7F7812; /* Background on hover */
+    color: #040731; /* Text color on hover */
+}
+
+/* Responsive adjustment for team section */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* Stack team members on small screens */
+    }
+}
+
+/* Base styles for all devices (mobile-first approach is recommended) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
+
+/* --- Mobile Devices (e.g., up to 767px wide) --- */
+/* These styles apply by default in a mobile-first approach.
+   You might only need to explicitly define things here if you are
+   overriding desktop styles or want to ensure certain mobile-specific behaviors. */
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    /* Styles for extra small screens and phones */
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    nav ul li {
+        display: block; /* Stack navigation items vertically */
+        text-align: center;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /* Styles for tablets and larger phones in landscape */
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+    nav ul li {
+        display: inline-block; /* Display navigation items horizontally */
+    }
+}
+
+/* --- Laptops and Desktops (e.g., 992px and up, or 1200px and up) --- */
+
+/* Large devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    /* Styles for standard desktop screens */
+    .container {
+        width: 80%;
+        max-width: 1200px; /* Optional: set a maximum width for very large screens */
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    /* Styles for larger desktop screens */
+    .container {
+        width: 70%;
+        max-width: 1400px;
+    }
+}
+
+
