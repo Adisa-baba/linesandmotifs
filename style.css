@@ -106,7 +106,7 @@ nav ul li a:hover {
 
 /* Update for logo image */
 nav .logo img {
-    height: 85px; /* Adjust as needed - this sets the height of your logo */
+    height: 100px; /* Adjust as needed - this sets the height of your logo */
     width: auto; /* Maintains aspect ratio */
     vertical-align: middle; /* Aligns with nav items */
 }
