@@ -25,14 +25,14 @@
         <nav>
             <div class="logo">
                 <a href="Index.html">
-				<img src="images/L&M logo.jpg" alt="Lines & Motifs">
-					<h1>Lines &amp; Motifs</h1>
+				<img src="/images/llm.png" alt="Lines & Motifs">
 				</a>
+                <h1>Motifs That Matter</h1>
             </div>
                         <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">What We Do</a></li>
+                <li><a href="portfolio.html">Our Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="social-links">
@@ -77,7 +77,7 @@
                     <h3>Furniture Manufacturing & Installations</h3>
                     <p>Crafted with precision and style, our custom-made furniture pieces are designed to fit your space perfectly. From design to installation, we deliver comfort, durability, and timeless elegance.</p>
                 </div>
-                <div class="service-item">
+                <!--<div class="service-item">
                     <h3>Custom Cabinetry</h3>
                     <p>Our bespoke cabinetry solutions blend form and function beautifully. Whether for kitchens, offices, or retail spaces, we design storage that complements your interior while keeping things neat and accessible.</p>
                 </div>
@@ -88,13 +88,16 @@
                 <div class="service-item">
                     <h3>Moving & Logistics</h3>
                     <p>Relocate with ease through our organized and reliable moving services. We handle your valuables with care, ensuring a smooth transition whether you're moving across town or setting up a new business space.</p>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 lines&motifs. All rights reserved.</p>
+        <p>&copy;<span id="year"></span> lines&amp;motifs. All rights reserved.</p>
+    </footer>
+    <script> document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
     </footer>
 </body>
 </html>

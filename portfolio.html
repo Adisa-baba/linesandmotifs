@@ -27,14 +27,14 @@
         <nav>
             <div class="logo">
                 <a href="Index.html">
-				<img src="images/L&M logo.jpg" alt="Lines & Motifs">
-					<h1>Lines &amp; Motifs</h1>
+				<img src="/images/llm.png" alt="Lines & Motifs">
 				</a>
+                <h1> Motifs That Matter</h1>
             </div>
                         <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">What We Do</a></li>
+                <li><a href="portfolio.html">Our Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="social-links">
@@ -48,14 +48,14 @@
 
     <main>
         <section class="section-padding  page-hero" id="hero-portfolio">
-            <h2>Our Portfolio: Inspiring Transformations</h2>
+            <h2>What We Do: Inspiring Transformations</h2>
             <p>Witness the remarkable before-and-after transformations achieved by our design and renovation experts.</p>
         </section>
 
         <section class="section-padding">
             <div class="gallery-grid">
                 <div class="project-item">
-                    <h3>Minimalist Bedroom Refresh</h3>
+                    <h3>Bedroom Refresh</h3>
                     <div class="image-pair">
                         <img src="images/bedroom-before.jpg" alt="Bedroom Before" class="before-image">
                         <img src="images/bedroom-after.jpg" alt="Bedroom After" class="after-image">
@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="project-item">
-                    <h3>Small kitchen Makeover</h3>
+                    <h3>kitchen Makeover</h3>
                     <div class="image-pair">
                         <img src="images/kitchen-before.jpg" alt="Bathroom Before" class="before-image">
                         <img src="images/Kitchen-after.jpg" alt="Bathroom After" class="after-image">
@@ -111,7 +111,10 @@
                 </div>
         </section>
     </main><footer>
-        <p>&copy; 2025 lines&motifs. All rights reserved.</p>
+        <p>&copy;<span id="year"></span> lines&amp;motifs. All rights reserved.</p>
+    </footer>
+    <script> document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
     </footer>
 </body>
 </html>

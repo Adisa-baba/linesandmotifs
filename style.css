@@ -26,7 +26,7 @@ h1, h2, h3 {
 
 /* Header & Navigation (KEEP AS IS) */
 header {
-    background: #A68B6B;
+    background: #040731;
     color: #fff;
     padding: 1rem 0;
     position: sticky;
@@ -51,7 +51,7 @@ nav ul li a {
     border-style: none;
     padding: 10px;
     margin: 20px;
-    background-color: #040731; /* Background color for nav links */
+    background-color: #7F7812; /* Background color for nav links */
 
 }
 
@@ -106,7 +106,7 @@ nav ul li a:hover {
 
 /* Update for logo image */
 nav .logo img {
-    height: 100px; /* Adjust as needed - this sets the height of your logo */
+    height: 85px; /* Adjust as needed - this sets the height of your logo */
     width: auto; /* Maintains aspect ratio */
     vertical-align: middle; /* Aligns with nav items */
 }
@@ -120,6 +120,10 @@ nav .logo h1 { /* You can remove this rule if your logo is always an image */
 nav .logo h1 {
     color: #7F7812;
     margin: 0;
+    text-decoration: none; /* Remove underline */
+    border-bottom: none;   /* Remove any border if present */
+    font-style: italic;
+    font-size: medium;
 }
 
 nav ul {
@@ -132,14 +136,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #040731;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #7F7812; /* Highlight color */
+    color: #040731; /* Highlight color */
 }
 
 /* Hero Section (Specific to index.html) */

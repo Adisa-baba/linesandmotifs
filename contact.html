@@ -26,14 +26,14 @@
         <nav>
             <div class="logo">
                 <a href="Index.html">
-				<img src="images/L&M logo.jpg" alt="Lines & Motifs">
-					<h1>Lines &amp; Motifs</h1>
+				<img src="/images/llm.png" alt="Lines & Motifs">
 				</a>
+                <h1>Motifs That Matter</h1>
             </div>
                         <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">What We Do</a></li>
+                <li><a href="portfolio.html">Our Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="social-links">
@@ -56,8 +56,8 @@
                 <h3>Contact Information</h3>
                 <p><strong>Phone:</strong> +234 8142688757</p>
                 <p><strong>Email:</strong> linesandmotifs@gmail.com</p>
-                <p><strong>Address:</strong>:9b, Adekoya street, off Ajose, Mende-maryland, Lagos, Nigeria</p>
-                <p><strong>Business Hours:</strong> Mon-Fri: 9:00 AM - 5:00 PM</p>
+                <p><strong>Address:</strong>:Martins Avenue, Lagos, Nigeria</p>
+                <p><strong>Business Hours:</strong> Mon-Sat: 9:00 AM - 9:00 PM</p>
             </div>
 
             <h3 style="margin-top: 40px;">Send Us a Message</h3>
@@ -73,7 +73,10 @@
     </main>
 
    <footer>
-        <p>&copy; 2025 lines&motifs. All rights reserved.</p>
+        <p>&copy;<span id="year"></span> lines&amp;motifs. All rights reserved.</p>
+    </footer>
+    <script> document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
     </footer>
 </body>
 </html>
