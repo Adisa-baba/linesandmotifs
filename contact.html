@@ -67,7 +67,7 @@
             </div>
 
             <h3 style="margin-top: 40px;">Send Us a Message</h3>
-            <form action="#" method="POST" class="contact-form">
+            <form action="process_form.php" method="POST" class="contact-form">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <input type="text" name="subject" placeholder="Subject">
@@ -104,5 +104,25 @@
             });
         });
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+        const message = urlParams.get('message');
+        if (status && message) {
+            const feedbackDiv = document.createElement('div');
+            feedbackDiv.textContent = message;
+            Object.assign(feedbackDiv.style, {
+                padding: '15px', marginBottom: '20px', textAlign: 'center', borderRadius: '5px',
+                maxWidth: '600px', margin: '20px auto'
+            });
+            feedbackDiv.style.backgroundColor = status === 'success' ? '#d4edda' : '#f8d7da';
+            feedbackDiv.style.color = status === 'success' ? '#155724' : '#721c24';
+            feedbackDiv.style.border = status === 'success' ? '1px solid #c3e6cb' : '1px solid #f5c6cb';
+            document.querySelector('.contact-form').parentNode.insertBefore(feedbackDiv, document.querySelector('.contact-form'));
+            history.replaceState({}, document.title, window.location.pathname);
+        }
+    });
+</script>
 </body>
 </html>
