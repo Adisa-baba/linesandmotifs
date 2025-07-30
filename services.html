@@ -24,23 +24,29 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="Index.html">
-				<img src="images/llm.png" alt="Lines & Motifs">
-				</a>
+                <a href="index.html">
+                <img src="images/llm.png" alt="Lines & Motifs">
+                </a>
                 <h1>Motifs That Matter</h1>
             </div>
-                        <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">What We Do</a></li>
-                <li><a href="portfolio.html">Our Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="social-links">
-                <a href="https://www.facebook.com/share/15hvPEQtD5/" target="_blank" aria-label="Facebook"><img src="logos/facebook.png" alt="Facebook"></a>
-                <a href="https://www.instagram.com/linesandmotifs?igsh=dncyM2RidWJmYmlk" target="_blank" aria-label="Instagram"><img src="logos/instagram.png" alt="Instagram"></a>
-                <a href="https://wa.me/08142688757" target="_blank"><img src="logos/whatsapp.png" alt="Twitter"></a>
+            <div class="hamburger" id="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="nav-links-container" id="nav-links-container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">What We Do</a></li>
+                    <li><a href="portfolio.html">Our Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/15hvPEQtD5/" target="_blank" aria-label="Facebook"><img src="logos/facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/linesandmotifs?igsh=dncyM2RidWJmYmlk" target="_blank" aria-label="Instagram"><img src="logos/instagram.png" alt="Instagram"></a>
+                    <a href="https://wa.me/08142688757" target="_blank"><img src="logos/whatsapp.png" alt="Twitter"></a>
                 </div>
-
+            </div>
         </nav>
     </header>
 
@@ -99,5 +105,25 @@
     <script> document.getElementById("year").textContent = new Date().getFullYear();
     </script>
     </footer>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // JavaScript for the hamburger menu
+        const hamburger = document.getElementById('hamburger-menu');
+        const navLinksContainer = document.getElementById('nav-links-container');
+
+        hamburger.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('active');
+            hamburger.classList.toggle('active'); // Optional: Add a class to hamburger for animation
+        });
+
+        // Close menu when a link is clicked (optional, but good for UX)
+        document.querySelectorAll('#nav-links-container ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksContainer.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
