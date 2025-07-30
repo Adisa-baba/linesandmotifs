@@ -399,14 +399,14 @@ nav ul li a:hover {
 }
 
 #hero-portfolio{
-    background: url("images/sittingroom-dinningafter.jpg") no-repeat center center/cover; /* Background image for services page */
+    background: url("images/sitting\ room.jpg") no-repeat center center/cover; /* Background image for services page */
     color: #fff;
     padding: 80px 20px;
     text-align: center;
 }
 
 .project-item {
-    background: #fff;
+    background: #A58A6A;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -442,7 +442,7 @@ nav ul li a:hover {
 /* Contact Form */
 
 #hero-contact {
-    background: url("") no-repeat center center/cover; /* Background image for contact page */
+    background: url("images/contact-background.jpg") no-repeat center center/cover; /* Background image for contact page */
     color: #fff;
     padding: 80px 20px;
     text-align: center;
@@ -567,4 +567,46 @@ footer {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed; /* Makes the button stay in place when scrolling */
+    bottom: 20px;    /* Distance from the bottom of the viewport */
+    right: 20px;     /* Distance from the right of the viewport */
+    width: 60px;     /* Width of the button area */
+    height: 60px;    /* Height of the button area */
+    background-color: #1DA851; /* WhatsApp green background */
+    border-radius: 50%; /* Makes it a perfect circle */
+    display: flex;   /* Use flexbox for centering the icon */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    box-shadow: 2px 2px 10px rgba(13, 196, 83, 0.3); /* Subtle shadow */
+    z-index: 1000;   /* Ensure it's above other content */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    background-color: #1DA851; /* Darker green on hover */
+}
+
+.whatsapp-float .whatsapp-icon {
+    width: 35px; /* Size of the WhatsApp logo inside the circle */
+    height: 35px; /* Size of the WhatsApp logo inside the circle */
+    /*filter: brightness(0) invert(1); /* Makes the logo white if it's colored */
+}
+
+/* Optional: Adjust for smaller screens if needed */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+    .whatsapp-float .whatsapp-icon {
+        width: 30px;
+        height: 30px;
+    }
 }
