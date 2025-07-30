@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to = "oluronti@gmail.com"; // CHANGE THIS to your email
     $email_subject = "New Contact Form: " . $subject;
     $email_body = "Name: $name\nEmail: $email\nSubject: $subject\nMessage:\n$message";
-    $headers = "From:https://ogkuti.github.io/linesandmotifs/\r\nReply-To: $email\r\nContent-Type: text/plain; charset=UTF-8\r\n"; // CHANGE noreply@yourdomain.com
+    $headers = "From: oluronti@gmail.com\r\nReply-To: $email\r\nContent-Type: text/plain; charset=UTF-8\r\n"; // CHANGE noreply@yourdomain.com
 
     if (mail($to, $email_subject, $email_body, $headers)) {
         header("Location: contact.html?status=success&message=Your message has been sent successfully!");
