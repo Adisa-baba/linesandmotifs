@@ -24,7 +24,7 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
-/* Header & Navigation (KEEP AS IS) */
+/* Header & Navigation */
 header {
     background: #040731;
     color: #fff;
@@ -43,92 +43,35 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative; /* Needed for absolute positioning of mobile menu */
 }
 
-nav ul li a {
-    border: 2px black;
-    border-radius: 10px;
-    border-style: none;
-    padding: 10px;
-    margin: 20px;
-    background-color: #7F7812; /* Background color for nav links */
-
-}
-
-nav ul li a:hover {
-    color: #007bff; /* Highlight color */
-}
-
-/* Social Links - NEW STYLES */
-.social-links {
-    display: flex;
-    gap: 15px; /* Space between icons */
-    margin-left: 20px; /* Space from navigation links */
-}
-
-.social-links img {
-    height: 24px; /* Size of your social icons */
-    width: 24px;
-    vertical-align: middle;
-    transition: transform 0.3s ease;
-}
-
-.social-links img:hover {
-    transform: translateY(-3px); /* Subtle hover effect */
-}
-
-
-/* Responsive Design (adjust for new social links) */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center; /* Center items when stacked */
-    }
-
-    nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav ul li {
-        margin: 5px 10px;
-    }
-
-    .social-links {
-        margin-top: 15px; /* Add space above social links when stacked */
-        margin-left: 0; /* Remove left margin when stacked */
-        justify-content: center; /* Center social icons on small screens */
-    }
-
-    /* ... rest of your existing media query styles ... */
-}
-
-/* Update for logo image */
 nav .logo img {
     height: 100px; /* Adjust as needed - this sets the height of your logo */
     width: auto; /* Maintains aspect ratio */
     vertical-align: middle; /* Aligns with nav items */
 }
 
-/* Remove or modify if you previously had text-based logo styling */
-nav .logo h1 { /* You can remove this rule if your logo is always an image */
-    color: #fff;
-    margin: 0;
-}
-
 nav .logo h1 {
     color: #7F7812;
     margin: 0;
-    text-decoration: none; /* Remove underline */
-    border-bottom: none;   /* Remove any border if present */
+    text-decoration: none;
+    border-bottom: none;
     font-style: italic;
     font-size: medium;
+}
+
+/* Navigation Links Container (wraps ul and social links) */
+.nav-links-container {
+    display: flex;
+    align-items: center;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -140,23 +83,171 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    border: 2px black;
+    border-radius: 10px;
+    border-style: none;
+    padding: 10px;
+    background-color: #7F7812;
 }
 
 nav ul li a:hover {
-    color: #040731; /* Highlight color */
+    color: #040731;
 }
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.social-links img {
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: translateY(-3px);
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    position: absolute; /* Position relative to the nav container */
+    right: 20px; /* Adjust as needed for right corner */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001; /* Above other nav elements when active */
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff; /* Color of the bars */
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+/* Hamburger active state (optional for animation) */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* Responsive Design - Mobile View */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row; /* Keep logo and hamburger on the same row */
+        justify-content: space-between; /* Space out logo and hamburger */
+        align-items: center;
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon on mobile */
+    }
+
+    .nav-links-container {
+        /* Hide by default on mobile */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #040731; /* Background for the mobile menu */
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        right: 0;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        z-index: 999; /* Below the hamburger but above page content */
+    }
+
+    .nav-links-container.active {
+        display: flex; /* Show when active */
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation links vertically */
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px; /* Space between links and social */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Adjust spacing for stacked links */
+    }
+
+    nav ul li a {
+        padding: 10px;
+        display: block; /* Make links full width for easier tapping */
+        width: 80%; /* Adjust width for better appearance */
+        margin: 0 auto; /* Center the links */
+        background-color: #7F7812;
+        color: #fff; /* Ensure text is visible on dark background */
+    }
+
+    .social-links {
+        margin-top: 15px;
+        justify-content: center; /* Center social icons */
+        width: 100%;
+        gap: 25px; /* Increase gap for better tapability */
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .page-hero h2 {
+        font-size: 2em;
+    }
+
+    .image-pair {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-pair img {
+        max-width: 90%;
+    }
+
+    .contact-info-section .contact-details {
+        padding: 20px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ... (rest of your existing CSS, no changes needed for sections below header) ... */
 
 /* Hero Section (Specific to index.html) */
 .hero {
-/*    background: url('images/hero-bg.jpg') no-repeat center center/cover;  Make sure to create this image */
+/* background: url('images/hero-bg.jpg') no-repeat center center/cover;  Make sure to create this image */
     color: #fff;
     text-align: center;
     padding: 100px 20px;
     height: 60vh; /* Adjust height as needed */
-	width: 100%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	animation: hero 15s ease-in-out infinite;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: hero 15s ease-in-out infinite;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,10 +255,10 @@ nav ul li a:hover {
 }
 
 @keyframes hero {
-	0% { background-image: url("images/slidesimages/carousel-44.jpg") }
-	33% { background-image: url("images/slidesimages/carousel-2.jpg")}
-	66% { background-image: url("images/slidesimages/carousel-3.jpg")}
-	100% { background-image: url("images/slidesimages/carousel-11.jpg")}
+    0% { background-image: url("images/slidesimages/carousel-44.jpg") }
+    33% { background-image: url("images/slidesimages/carousel-2.jpg")}
+    66% { background-image: url("images/slidesimages/carousel-3.jpg")}
+    100% { background-image: url("images/slidesimages/carousel-11.jpg")}
 }
 
 .hero::before { /* Overlay for better text readability */
@@ -291,7 +382,7 @@ nav ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: left;
-	color: #000000;
+    color: #000000;
 }
 
 .service-item h3 {
@@ -408,48 +499,6 @@ footer {
     padding: 20px 0;
 }
 
-/* Responsive Design (KEEP AS IS, with minor adjustments for new elements) */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-    }
-
-    nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav ul li {
-        margin: 5px 10px;
-    }
-
-    .hero h2 {
-        font-size: 2.5em;
-    }
-
-    .hero p {
-        font-size: 1em;
-    }
-
-    .page-hero h2 {
-        font-size: 2em;
-    }
-
-    .image-pair {
-        flex-direction: column; /* Stack images on small screens */
-        align-items: center;
-    }
-
-    .image-pair img {
-        max-width: 90%; /* Make images take more width */
-    }
-
-    .contact-info-section .contact-details {
-        padding: 20px;
-    }
-}
-
 /* Team Section - NEW STYLES */
 .team-section {
     background-color: #fcfcfc; /* Lighter background for this section */
@@ -495,7 +544,7 @@ footer {
     font-size: 0.9em;
     color: #666;
     line-height: 1.5;
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .team-member .learn-more-link {
@@ -514,52 +563,8 @@ footer {
     color: #040731; /* Text color on hover */
 }
 
-/* Responsive adjustment for team section */
-@media (max-width: 768px) {
-    .team-grid {
-        grid-template-columns: 1fr; /* Stack team members on small screens */
-    }
-}
-
-
-/* Responsive navigation */
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-/*@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    background: #A68B6B;
-    width: 100%;
-  }
-  .logo img {
-    width: 60px;
-    height: auto;
-  }
-  .hero-content, .about-us, .team-section, .featured-items {
-    padding: 10px;
-  }
-  .gallery-grid, .team-grid {
-    display: block;
-  }
-  .project-item, .team-member {
-    margin-bottom: 20px;
-  }
-  body {
-    font-size: 16px;
-  }
-}
-
 /* Make images responsive */
 img {
   max-width: 100%;
   height: auto;
 }
-
