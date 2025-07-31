@@ -134,6 +134,7 @@
    <!-- WhatsApp Chat Widget -->
 <div class="whatsapp-widget" id="whatsappWidget">
   <div class="chat-popup" id="chatPopup">
+    <button id="closeChatPopup" style="position:absolute;top:8px;right:12px;background:none;border:none;font-size:20px;cursor:pointer;color:#333;">&times;</button>
     <p>👋Welcome to Lines & Motifs™!
 Have questions about our furniture or renovation services? We're here to help.</p>
     <a href="https://wa.me/2348142688757?text=Hello!%20I%20visited%20your%20website%20and%20would%20like%20to%20chat." target="_blank" class="chat-now">Start Chat</a>
@@ -142,11 +143,16 @@ Have questions about our furniture or renovation services? We're here to help
     <img src="logos/Whatsapp-icon 1.png" alt="Chat Icon" />
   </div>
 </div>
-    <script>
+<script>
   // Toggle popup when icon is clicked
   document.getElementById('chatToggle').addEventListener('click', function () {
     var popup = document.getElementById('chatPopup');
     popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Close popup when close button is clicked
+  document.getElementById('closeChatPopup').addEventListener('click', function () {
+    document.getElementById('chatPopup').style.display = 'none';
   });
 
   // Show popup after 4 seconds automatically
