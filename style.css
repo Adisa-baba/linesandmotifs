@@ -501,7 +501,7 @@ footer {
 
 /* Team Section - NEW STYLES */
 .team-section {
-    background-color: #fcfcfc; /* Lighter background for this section */
+    background-color: burlywood; /* Lighter background for this section */
 }
 
 .team-grid {
@@ -569,44 +569,75 @@ img {
   height: auto;
 }
 
-/* WhatsApp Floating Button */
-.whatsapp-float {
-    position: fixed; /* Makes the button stay in place when scrolling */
-    bottom: 20px;    /* Distance from the bottom of the viewport */
-    right: 20px;     /* Distance from the right of the viewport */
-    width: 60px;     /* Width of the button area */
-    height: 60px;    /* Height of the button area */
-    background-color: #1DA851; /* WhatsApp green background */
-    border-radius: 50%; /* Makes it a perfect circle */
-    display: flex;   /* Use flexbox for centering the icon */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    box-shadow: 2px 2px 10px rgba(13, 196, 83, 0.3); /* Subtle shadow */
-    z-index: 1000;   /* Ensure it's above other content */
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth hover effect */
+.whatsapp-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-family: 'Arial', sans-serif;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-    background-color: #1DA851; /* Darker green on hover */
+.whatsapp-icon {
+  background-color: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.whatsapp-float .whatsapp-icon {
-    width: 35px; /* Size of the WhatsApp logo inside the circle */
-    height: 35px; /* Size of the WhatsApp logo inside the circle */
-    /*filter: brightness(0) invert(1); /* Makes the logo white if it's colored */
+.whatsapp-icon img {
+  width: 35px;
+  height: 35px;
 }
 
-/* Optional: Adjust for smaller screens if needed */
-@media (max-width: 768px) {
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 15px;
-        right: 15px;
-    }
-    .whatsapp-float .whatsapp-icon {
-        width: 30px;
-        height: 30px;
-    }
+.chat-popup {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background: #fff;
+  color: #000;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 220px;
+  text-align: center;
+}
+
+.chat-popup p {
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+.chat-now {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.9em;
+  transition: background 0.3s ease;
+}
+
+.chat-now:hover {
+  background-color: #128C7E;
+}
+
+
+.section-padding {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 20px;
 }

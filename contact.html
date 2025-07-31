@@ -124,8 +124,30 @@
         }
     });
 </script>
-<a href="https://wa.me/2348142688757?text=Hello%20Lines%20%26%20Motifs%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." class="whatsapp-float" target="_blank">
-    <img src="logos/Whatsapp-icon 1.png" alt="WhatsApp" class="whatsapp-icon">
-</a>
+<!-- WhatsApp Chat Widget -->
+<div class="whatsapp-widget" id="whatsappWidget">
+  <div class="chat-popup" id="chatPopup">
+    <p>👋Welcome to Lines & Motifs™!
+Have questions about our furniture or renovation services? We're here to help.</p>
+    <a href="https://wa.me/2348142688757?text=Hello!%20I%20visited%20your%20website%20and%20would%20like%20to%20chat." target="_blank" class="chat-now">Start Chat</a>
+  </div>
+  <div class="whatsapp-icon" id="chatToggle">
+    <img src="logos/Whatsapp-icon 1.png" alt="Chat Icon" />
+  </div>
+</div>
+    <script>
+  // Toggle popup when icon is clicked
+  document.getElementById('chatToggle').addEventListener('click', function () {
+    var popup = document.getElementById('chatPopup');
+    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Show popup after 4 seconds automatically
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      document.getElementById('chatPopup').style.display = 'block';
+    }, 4000);
+  });
+</script>
 </body>
 </html>
