@@ -255,10 +255,10 @@ nav ul li a:hover {
 }
 
 @keyframes hero {
-    0% { background-image: url("images/slidesimages/carousel-44.jpg") }
-    33% { background-image: url("images/slidesimages/carousel-2.jpg")}
-    66% { background-image: url("images/slidesimages/carousel-3.jpg")}
-    100% { background-image: url("images/slidesimages/carousel-11.jpg")}
+    0% { background-image: url("https://res.cloudinary.com/dygpli5bf/image/upload/v1754000321/carousel-44_hoevs5.jpg") }
+    33% { background-image: url("https://res.cloudinary.com/dygpli5bf/image/upload/v1754000300/carousel-11_a3ifvq.jpg")}
+    66% { background-image: url("https://res.cloudinary.com/dygpli5bf/image/upload/v1754088037/20231125_120947_xfbkkp.jpg")}
+    100% { background-image: url("https://res.cloudinary.com/dygpli5bf/image/upload/v1754088110/IMG-20241025-WA0010_axhojt.jpg")}
 }
 
 .hero::before { /* Overlay for better text readability */
