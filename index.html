@@ -87,7 +87,7 @@
             <div class="gallery-grid">
                 <div class="project-item">
                     <h3>Modern Work Space</h3>
-                    <div class="image-pair">
+                    <div class="image-pair-index">
                         <img src="images/before1.jpg" alt="Featured Project 1 Before" class="before-image">
                         <img src="images/after1.jpg" alt="Featured Project 1 After" class="after-image">
                     </div>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="project-item">
                     <h3>Modern Living Room</h3>
-                    <div class="image-pair">
+                    <div class="image-pair-index">
                         <img src="images/before2.jpg" alt="Featured Project 2 Before" class="before-image">
                         <img src="images/after2.jpg" alt="Featured Project 2 After" class="after-image">
                     </div>
@@ -161,6 +161,29 @@ Have questions about our furniture or renovation services? We're here to help
       document.getElementById('chatPopup').style.display = 'block';
     }, 4000);
   });
+</script>
+<!-- Image Modal -->
+<div id="imgModal" class="modal" style="display:none;">
+  <span class="close" id="closeModal" style="position:absolute;top:10px;right:20px;font-size:30px;cursor:pointer;color:#fff;">&times;</span>
+  <img class="modal-content" id="modalImg" style="max-width:90vw;max-height:80vh;display:block;margin:auto;">
+  <div id="caption" style="color:#fff;text-align:center;margin-top:10px;"></div>
+</div>
+<script>
+  // Modal gallery for project images
+  document.querySelectorAll('.image-pair-index img').forEach(function(img) {
+    img.addEventListener('click', function() {
+      document.getElementById('imgModal').style.display = 'block';
+      document.getElementById('modalImg').src = this.src;
+      document.getElementById('caption').innerText = this.alt;
+    });
+  });
+  document.getElementById('closeModal').onclick = function() {
+    document.getElementById('imgModal').style.display = 'none';
+  };
+  // Optional: close modal when clicking outside image
+  document.getElementById('imgModal').onclick = function(e) {
+    if (e.target === this) this.style.display = 'none';
+  };
 </script>
 </body>
 </html>

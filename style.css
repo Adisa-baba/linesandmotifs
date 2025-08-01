@@ -216,12 +216,12 @@ nav ul li a:hover {
         font-size: 2em;
     }
 
-    .image-pair {
+    .image-pair-index {
         flex-direction: column;
         align-items: center;
     }
 
-    .image-pair img {
+    .image-pair-index img {
         max-width: 90%;
     }
 
@@ -419,14 +419,14 @@ nav ul li a:hover {
     color: #333;
 }
 
-.image-pair {
+.image-pair-index {
     display: flex;
     justify-content: space-around;
     gap: 10px;
     margin-bottom: 15px;
 }
 
-.image-pair img {
+.image-pair-index img {
     max-width: 48%; /* Adjust to fit two images nicely side-by-side */
     height: auto;
     border-radius: 5px;
@@ -642,7 +642,7 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
-/* Image Modal Styles */
+/* Image Modal Styles for portfolio */
 .modal {
   display: none;
   position: fixed;
