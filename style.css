@@ -493,7 +493,7 @@ nav ul li a:hover {
 
 /* Footer (KEEP AS IS) */
 footer {
-    background: #333;
+    background: #040731;
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -740,3 +740,33 @@ h1, h2, h3 {
     min-height: 70px;
   }
 }
+
+/* Add this to your style.css */
+
+/* Example background image for all service items */
+/*.service-item {
+    position: relative;
+    background: url(https://res.cloudinary.com/dygpli5bf/image/upload/v1754087928/20241231_150538_z5gpco.jpg) center center/cover no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 24px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    color: #fff; /* Ensures text is visible on dark overlay.
+}
+
+/* Overlay to fade the background image */
+/*.service-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 30, 30, 0.55); /* Adjust opacity as needed 
+    z-index: 0;
+    border-radius: 10px;
+}
+
+/* Ensure content is above the overlay */
+/*.service-item > * {
+    position: relative;
+    z-index: 1;
+}*/
