@@ -741,7 +741,27 @@ h1, h2, h3 {
   }
 }
 
-/* Add this to your style.css */
+/* Dropdown button style */
+.dropdown-btn {
+  background: #040731;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: background 0.2s;
+}
+.dropdown-btn:hover {
+  background: #7F7812;
+}
+
+/* Dropdown content animation */
+.dropdown-team-content {
+  transition:all 0.3s;
+}
+
 
 /* Example background image for all service items */
 /*.service-item {

@@ -69,7 +69,7 @@
       <div class="about-us">
         <h2>What We're About</h2>
         <p>
-          Lines &amp; Motifs™ Design Services Ltd. is a full-service architecture, interior building solutions, and
+          Lines &amp; Motifs™ Design Services Ltd RC:1375360. is a full-service architecture, interior building solutions, and
           furniture manufacturing company, registered under the laws of the Federal Republic of Nigeria. Founded in
           November 2016 and located at Martins Avenue, Lagos, we have built a strong reputation for transforming spaces
           through design excellence, skilled craftsmanship, and client-centered service.
@@ -77,45 +77,74 @@
       </div>
     </section>
 
-    <section class="section-padding team-section">
-      <h2> Our Team Of Experts</h2>
-      <p>Meet the visionary team driving innovation, excellence, and client-focused design at Lines &amp; Motifs™.</p>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="https://res.cloudinary.com/dygpli5bf/image/upload/v1754000272/Arc_Tolu_uv2qjf.jpg"
-            alt="Team Member 1 Name">
-          <h3>Arc Tolulope Adeyi </h3>
-          <p class="role">Managing director and creative lead </p>
-          <a href="https://www.linkedin.com/in/tolulope-adeyi-07103983?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            target="_blank" class="learn-more-link"> Learn more</a>
-
-        </div>
+<section class="section-padding team-section">
+  <h2> Our Team Of Experts</h2>
+  <p>Meet the visionary team driving innovation, excellence, and client-focused design at Lines &amp; Motifs™.</p>
+  <div class="team-grid">
+    <div class="team-member">
+      <img src="https://res.cloudinary.com/dygpli5bf/image/upload/v1754000272/Arc_Tolu_uv2qjf.jpg"
+        alt="Team Member 1 Name">
+      <h3>Designer Tolulope Adeyi </h3>
+      <p class="role">Managing director and creative lead </p>
+      <a href="https://www.linkedin.com/in/tolulope-adeyi-07103983?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        target="_blank" class="learn-more-link"> Learn more</a>
+    </div>
+  </div>
+  <!-- Reduce space here -->
+  <div style="height: 10px;"></div>
+  <button class="dropdown-btn" onclick="toggleDropdownTeam()">Show More Team Members</button>
+  <div class="dropdown-team-content" id="dropdownTeam" style="display:none;">
+    <div class="team-grid">
+      <div class="team-member">
+        <h3>Mrs Tinuola Adebola</h3>
+        <p class="role">Director 2</p>
+        <a href="https://www.linkedin.com/in/tinu-taylor-07b526120?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="learn-more-link">Learn more</a>
+        <br>
+        <br>
+        <h3>Hamzat Aishat</h3>
+        <p class="role">Design Architect</p>
+        <a href="https://www.linkedin.com/in/hamzat-aishat-633b51192?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="learn-more-link">Learn more</a>
       </div>
-    </section>
+      <div class="team-member">
+        <h3>Oluwaseun Taylor</h3>
+        <p class="role">company secretary/accounts manager</p>
+        <a href="#" class="learn-more-link">Learn more</a>
+        <br>
+        <br>
+        <h3>Mr Olusegun Beloved</h3>
+        <p class="role">Head of carpentry</p>
+        <a href="#" class="learn-more-link">Learn more</a>
+      </div>
+      <!-- Add more team members as needed -->
+    </div>
+  </div>
+</section>
 
     <section class="section-padding featured-items">
       <h2> Projects</h2>
       <div class="gallery-grid">
         <div class="project-item">
-          <h3>###</h3>
+          <h3>Four Storey Building Exterior Finishing</h3>
           <div class="image-pair-index">
             <img src="https://res.cloudinary.com/dygpli5bf/image/upload/v1754088010/20241105_085213_xwlf12.jpg" alt=""
               class="before-image">
             <img src="https://res.cloudinary.com/dygpli5bf/image/upload/v1754088008/20250115_135357_xf73po.jpg" alt=""
               class="after-image">
           </div>
-          <p>A stunning transformation of a dull living room into a vibrant, work space.</p>
+          <p style="font-weight: bold;">Client: Private</p>
+          <p style="font-style: italic;">Location: Asese, Ibafo. 2025</p>
           <a href="portfolio.html" class="button small-button">View Project</a>
         </div>
         <div class="project-item">
-          <h3>###</h3>
+          <h3>Open-Plan Office Fit Out</h3>
           <div class="image-pair-index">
             <img src="https://res.cloudinary.com/dygpli5bf/image/upload/v1754087401/before11_qlv0nz.jpg" alt=""
               class="before-image">
             <img src="https://res.cloudinary.com/dygpli5bf/image/upload/v1754087790/after111_qmmb0i.jpg" alt=""
               class="after-image">
           </div>
-          <p>A stunning transformation of a dull living room into a vibrant, modern space.</p>
+          <p style="font-weight: bold;">Client: Muster Point</p>
+          <p style="font-style: italic;">Location: Allen Avenue, Ikeja. 2019</p>
           <a href="portfolio.html" class="button small-button"> View Project</a>
         </div>
       </div>
@@ -204,6 +233,13 @@
       if (e.target === this) this.style.display = 'none';
     };
   </script>
+  <script>
+  // Dropdown for more team members
+  function toggleDropdownTeam() {
+    var dropdown = document.getElementById('dropdownTeam');
+    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
 </body>
 
 </html>
