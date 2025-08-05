@@ -635,6 +635,7 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    border-radius: 5px;
 }
 
 h1, h2, h3 {
@@ -761,6 +762,8 @@ h1, h2, h3 {
 .dropdown-team-content {
   transition:all 0.3s;
 }
+
+
 
 
 /* Example background image for all service items */
