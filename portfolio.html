@@ -335,29 +335,63 @@
   </script>
 
   <!-- Image Modal -->
-  <div id="imgModal" class="modal" style="display:none;">
-    <span class="close" id="closeModal"
-      style="position:absolute;top:10px;right:20px;font-size:30px;cursor:pointer;color:#fff;">&times;</span>
-    <img class="modal-content" id="modalImg" style="max-width:90vw;max-height:80vh;display:block;margin:auto;">
-    <div id="caption" style="color:#fff;text-align:center;margin-top:10px;"></div>
-  </div>
+  <!-- Image Modal with Navigation -->
+<div id="imgModal" class="modal" style="display:none;">
+  <span class="close" id="closeModal"
+    style="position:absolute;top:10px;right:20px;font-size:30px;cursor:pointer;color:#fff;">&times;</span>
+  <span id="prevImg" class="modal-arrow">&#10094;</span>
+  <img class="modal-content" id="modalImg" style="max-width:90vw;max-height:80vh;display:block;margin:auto;">
+  <span id="nextImg" class="modal-arrow">&#10095;</span>
+  <div id="caption" style="color:#fff;text-align:center;margin-top:10px;"></div>
+</div>
   <script>
-    // Modal gallery for project images
-    document.querySelectorAll('.gallery-img').forEach(function (img) {
+  // Modal gallery with next/prev navigation for each .image-pair group
+  let currentImages = [];
+  let currentIndex = 0;
+
+  document.querySelectorAll('.image-pair').forEach(function(pair) {
+    const imgs = Array.from(pair.querySelectorAll('.gallery-img'));
+    imgs.forEach(function(img, idx) {
       img.addEventListener('click', function () {
+        currentImages = imgs;
+        currentIndex = idx;
+        showModalImage();
         document.getElementById('imgModal').style.display = 'block';
-        document.getElementById('modalImg').src = this.src;
-        document.getElementById('caption').innerText = this.alt;
       });
     });
-    document.getElementById('closeModal').onclick = function () {
-      document.getElementById('imgModal').style.display = 'none';
-    };
-    // Optional: close modal when clicking outside image
-    document.getElementById('imgModal').onclick = function (e) {
-      if (e.target === this) this.style.display = 'none';
-    };
-  </script>
+  });
+
+  function showModalImage() {
+    const modalImg = document.getElementById('modalImg');
+    const caption = document.getElementById('caption');
+    modalImg.src = currentImages[currentIndex].src;
+    caption.innerText = currentImages[currentIndex].alt;
+  }
+
+  document.getElementById('closeModal').onclick = function () {
+    document.getElementById('imgModal').style.display = 'none';
+  };
+
+  document.getElementById('imgModal').onclick = function (e) {
+    if (e.target === this) this.style.display = 'none';
+  };
+
+  document.getElementById('prevImg').onclick = function (e) {
+    e.stopPropagation();
+    if (currentImages.length) {
+      currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+      showModalImage();
+    }
+  };
+
+  document.getElementById('nextImg').onclick = function (e) {
+    e.stopPropagation();
+    if (currentImages.length) {
+      currentIndex = (currentIndex + 1) % currentImages.length;
+      showModalImage();
+    }
+  };
+</script>
 </body>
 
 </html>

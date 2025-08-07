@@ -520,8 +520,8 @@ footer {
 }
 
 .team-member img {
-    width: 150px; /* Adjust size as needed */
-    height: 150px; /* Make it square */
+    width: 250px; /* Adjust size as needed */
+    height: 250px; /* Make it square */
     border-radius: 50%; /* Makes the image circular */
     object-fit: cover; /* Ensures image covers the area without distortion */
     margin-bottom: 20px;
@@ -742,7 +742,7 @@ h1, h2, h3 {
   }
 }
 
-/* Dropdown button style */
+/* Dropdown button style for show more teams */
 .dropdown-btn {
   background: #040731;
   color: #fff;
@@ -763,8 +763,68 @@ h1, h2, h3 {
   transition:all 0.3s;
 }
 
+/* Clients Section */
+.clients-section {
+  background: #fff;
+  border-radius: 10px;
+  margin: 40px auto 0 auto;
+  padding: 15px 5px;
+  max-width: 1100px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
 
+.clients-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
 
+.clients-logos img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(60%);
+  transition: filter 0.2s;
+}
+.clients-logos img:hover {
+  filter: none;
+}
+
+/* Modal arrow styles */
+.modal-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2001;
+  user-select: none;
+  padding: 8px 12px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: background 0.2s;
+}
+#prevImg {
+  left: 50%;
+  transform: translate(-420px, -50%); /* 180px from center to the left */
+}
+
+#nextImg {
+  right: 50%;
+  transform: translate(420px, -50%); /* 180px from center to the right */
+}
+
+@media (max-width: 600px) {
+  #prevImg {
+    transform: translate(-60vw, -50%);
+  }
+  #nextImg {
+    transform: translate(60vw, -50%);
+  }
+}
 
 /* Example background image for all service items */
 /*.service-item {
