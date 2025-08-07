@@ -804,25 +804,30 @@ h1, h2, h3 {
   padding: 8px 12px;
   background: rgba(0,0,0,0.2);
   border-radius: 50%;
+  transition: background 0.2s, left 0.2s, right 0.2s;
   transform: translateY(-50%);
-  transition: background 0.2s;
 }
+
 #prevImg {
-  left: 50%;
-  transform: translate(-420px, -50%); /* 180px from center to the left */
+  left: 20px;
+  transform: translateY(-50%);
 }
 
 #nextImg {
-  right: 50%;
-  transform: translate(420px, -50%); /* 180px from center to the right */
+  right: 20px;
+  transform: translateY(-50%);
 }
 
 @media (max-width: 600px) {
   #prevImg {
-    transform: translate(-60vw, -50%);
+    left: 8px;
+    font-size: 32px;
+    padding: 6px 10px;
   }
   #nextImg {
-    transform: translate(60vw, -50%);
+    right: 8px;
+    font-size: 32px;
+    padding: 6px 10px;
   }
 }
 
