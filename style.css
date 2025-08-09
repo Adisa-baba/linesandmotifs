@@ -371,7 +371,7 @@ nav ul li a:hover {
     margin-top: 40px;
 }
 #services-hero {
-    background: url("images/service1.jpg") no-repeat center center/cover; /* Background image for services page */
+    background: url("https://res.cloudinary.com/dygpli5bf/image/upload/v1754000296/service1_qn1fbr.jpg") no-repeat center center/cover; /* Background image for services page */
     color: #fff;
     padding: 80px 20px;
     text-align: center;
@@ -399,7 +399,7 @@ nav ul li a:hover {
 }
 
 #hero-portfolio{
-    background: url("images/sitting\ room.jpg") no-repeat center center/cover; /* Background image for services page */
+    background: url("https://res.cloudinary.com/dygpli5bf/image/upload/v1754000512/sittingroom-dinningafter_vyh1ef.jpg") no-repeat center center/cover; /* Background image for services page */
     color: #fff;
     padding: 80px 20px;
     text-align: center;
